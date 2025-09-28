@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Talents>
+  <Talent identifier="deep_talent_grizzlies_team_juggernaut">
+    <Icon texture="%ModDir%/Talents/shotgun.png" sheetindex="0,3" sheetelementsize="128,128" />
+    <Description tag="talentdescription.deep_talent_grizzlies_team_juggernaut"></Description>
+    <!-- 士兵天赋 -->
+    <!-- 数值调整 -->
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="MaximumHealthMultiplier" value="1.7" />
+        <CharacterAbilityGiveStat stattype="MeleeAttackMultiplier" value="10" />
+        <CharacterAbilityGiveStat stattype="MeleeAttackSpeed" value="1" />
+        <CharacterAbilityGiveStat stattype="MovementSpeed" value="0.3" />
+        <CharacterAbilityModifyStat stattype="TeamAttackMultiplier" value="-1" />
+        <CharacterAbilityModifyStat stattype="WeaponsSkillBonus" value="200" />
+        <CharacterAbilityModifyStat stattype="RangedAttackMultiplier" value="0.3" />
+      </Abilities>
+    </AbilityGroupEffect>
+    <!-- 攻击时降低玩家45%伤害抗性 -->
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" setvalue="true" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+              <Affliction identifier="deep_gunwound_reduce_45" strength="1.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+    <!-- 抗性 -->
+    <AbilityGroupInterval interval="5">
+      <Abilities>
+        <CharacterAbilityModifyResistance resistanceid="stun" multiplier="0.1" />
+      </Abilities>
+    </AbilityGroupInterval>
+    <!-- 突击手 -->
+    <AbilityGroupInterval interval="0.9">
+      <Conditions>
+        <AbilityConditionNearbyCharacterCount distance="800" targettypes="Enemy" count="1" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyStat stattype="RangedAttackMultiplier" value="0.3" />
+        <CharacterAbilityModifyStat stattype="RangedAttackSpeed" value="0.3" />
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <Talent identifier="deep_talent_grizzlies_political_commissar">
+    <Icon texture="%ModDir%/Talents/shotgun.png" sheetindex="0,3" sheetelementsize="128,128" />
+    <Description tag="talentdescription.deep_talent_grizzlies_political_commissar"></Description>
+    <!-- 政委天赋 -->
+    <!-- 数值调整 -->
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="MaximumHealthMultiplier" value="1.7" />
+        <CharacterAbilityGiveStat stattype="MeleeAttackMultiplier" value="10" />
+        <CharacterAbilityGiveStat stattype="MeleeAttackSpeed" value="1" />
+        <CharacterAbilityGiveStat stattype="MovementSpeed" value="0.4" />
+        <CharacterAbilityModifyStat stattype="TeamAttackMultiplier" value="-1" />
+        <CharacterAbilityModifyStat stattype="RangedAttackMultiplier" value="0.5" />
+        <CharacterAbilityModifyStat stattype="WeaponsSkillBonus" value="200" />
+      </Abilities>
+    </AbilityGroupEffect>
+    <!-- 攻击时降低玩家45%伤害抗性 -->
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" setvalue="true" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+              <Affliction identifier="deep_gunwound_reduce_45" strength="1.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+    <!-- 抗性 -->
+    <AbilityGroupInterval interval="5">
+      <Abilities>
+        <CharacterAbilityModifyResistance resistanceid="stun" multiplier="0.1" />
+      </Abilities>
+    </AbilityGroupInterval>
+    <!-- 政委 -->
+    <AbilityGroupEffect abilityeffecttype="OnDieToCharacter">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAllies requiresalive="false">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character">
+              <Affliction identifier="deep_revengesquad_grizzlies_nightmare" amount="180" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAllies>
+      </Abilities>
+    </AbilityGroupEffect>
+    <!-- 政委活着时，全员获得20%移速，10%伤害加成,50%精度加成 -->
+    <AbilityGroupInterval interval="0.9">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAllies allowself="true" requiresalive="true" allowclientsimulation="false">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+              <Affliction identifier="deep_talent_grizzlies_political_commissar_alive" amount="10.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAllies>
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <Talent identifier="deep_talent_grizzlies_machinegun_fort">
+    <Icon texture="%ModDir%/Talents/shotgun.png" sheetindex="0,3" sheetelementsize="128,128" />
+    <Description tag="talentdescription.deep_talent_grizzlies_machinegun_fort"></Description>
+    <!-- 机枪手天赋 -->
+    <!-- 数值调整 -->
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="MaximumHealthMultiplier" value="1.7" />
+        <CharacterAbilityGiveStat stattype="MeleeAttackMultiplier" value="10" />
+        <CharacterAbilityGiveStat stattype="MeleeAttackSpeed" value="1" />
+        <CharacterAbilityModifyStat stattype="TeamAttackMultiplier" value="-1" />
+        <CharacterAbilityModifyStat stattype="MovementSpeed" value="0.3" />
+        <CharacterAbilityModifyStat stattype="RangedAttackMultiplier" value="0.3" />
+        <CharacterAbilityModifyStat stattype="WeaponsSkillBonus" value="200" />
+      </Abilities>
+    </AbilityGroupEffect>
+    <!-- 攻击时降低玩家45%伤害抗性 -->
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" setvalue="true" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+              <Affliction identifier="deep_gunwound_reduce_45" strength="1.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+    <!-- 抗性 -->
+    <AbilityGroupInterval interval="5">
+      <Abilities>
+        <CharacterAbilityModifyResistance resistanceid="stun" multiplier="0.1" />
+      </Abilities>
+    </AbilityGroupInterval>
+    <!-- 机枪手 -->
+    <AbilityGroupInterval interval="0.9">
+      <Conditions>
+        <AbilityConditionNearbyCharacterCount distance="800" targettypes="Enemy" count="1" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyStat stattype="RangedAttackSpeed" value="-0.3" />
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <Talent identifier="deep_talent_grizzlies_heavy_gunner">
+    <Icon texture="%ModDir%/Talents/shotgun.png" sheetindex="0,3" sheetelementsize="128,128" />
+    <Description tag="talentdescription.deep_talent_grizzlies_heavy_gunner"></Description>
+    <!-- 重炮手天赋 -->
+    <!-- 数值调整 -->
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="MaximumHealthMultiplier" value="1.7" />
+        <CharacterAbilityGiveStat stattype="MeleeAttackMultiplier" value="10" />
+        <CharacterAbilityGiveStat stattype="MeleeAttackSpeed" value="1" />
+        <CharacterAbilityGiveStat stattype="MovementSpeed" value="0.4" />
+        <CharacterAbilityModifyStat stattype="RangedAttackMultiplier" value="1" />
+        <CharacterAbilityModifyStat stattype="TeamAttackMultiplier" value="-1" />
+        <CharacterAbilityModifyStat stattype="WeaponsSkillBonus" value="200" />
+      </Abilities>
+    </AbilityGroupEffect>
+    <!-- 攻击时降低玩家45%伤害抗性 -->
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" setvalue="true" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+              <Affliction identifier="deep_gunwound_reduce_45" strength="1.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+    <!-- 抗性 -->
+    <AbilityGroupInterval interval="5">
+      <Abilities>
+        <CharacterAbilityModifyResistance resistanceid="stun" multiplier="0.1" />
+      </Abilities>
+    </AbilityGroupInterval>
+    <!-- 狙击手 -->
+    <AbilityGroupInterval interval="0.9">
+      <Conditions>
+        <AbilityConditionNearbyCharacterCount distance="800" targettypes="Enemy" count="1" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyStat stattype="RangedAttackMultiplier" value="-0.7" />
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <Talent identifier="deep_talent_grizzlies_heavy_gl">
+    <Icon texture="%ModDir%/Talents/shotgun.png" sheetindex="0,3" sheetelementsize="128,128" />
+    <Description tag="talentdescription.deep_talent_grizzlies_heavy_gl"></Description>
+    <!-- 爆破手天赋 -->
+    <!-- 数值调整 -->
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="MaximumHealthMultiplier" value="1.7" />
+        <CharacterAbilityGiveStat stattype="MeleeAttackMultiplier" value="10" />
+        <CharacterAbilityGiveStat stattype="MeleeAttackSpeed" value="1" />
+        <CharacterAbilityGiveStat stattype="MovementSpeed" value="0.4" />
+        <CharacterAbilityModifyStat stattype="RangedAttackMultiplier" value="1" />
+        <CharacterAbilityModifyStat stattype="TeamAttackMultiplier" value="-1" />
+        <CharacterAbilityModifyStat stattype="WeaponsSkillBonus" value="200" />
+      </Abilities>
+    </AbilityGroupEffect>
+    <!-- 攻击时降低玩家45%伤害抗性 -->
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" setvalue="true" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+              <Affliction identifier="deep_gunwound_reduce_45" strength="1.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+    <!-- 抗性 -->
+    <AbilityGroupInterval interval="5">
+      <Abilities>
+        <CharacterAbilityModifyResistance resistanceid="stun" multiplier="0.1" />
+      </Abilities>
+    </AbilityGroupInterval>
+    <!-- 爆破手 -->
+    <AbilityGroupInterval interval="0.9">
+      <Conditions>
+        <AbilityConditionNearbyCharacterCount distance="700" targettypes="Enemy" count="1" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyStat stattype="RangedAttackMultiplier" value="-1.5" />
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <Talent identifier="deep_talent_grizzlies_leader">
+    <Icon texture="%ModDir%/Talents/shotgun.png" sheetindex="0,3" sheetelementsize="128,128" />
+    <Description tag="talentdescription.deep_talent_grizzlies_leader"></Description>
+    <!-- 首领天赋 -->
+    <!-- 数值调整 -->
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="MaximumHealthMultiplier" value="1.7" />
+        <CharacterAbilityGiveStat stattype="MeleeAttackMultiplier" value="10" />
+        <CharacterAbilityGiveStat stattype="MeleeAttackSpeed" value="1" />
+        <CharacterAbilityGiveStat stattype="MovementSpeed" value="0.6" />
+        <CharacterAbilityModifyStat stattype="RangedAttackMultiplier" value="0.7" />
+        <CharacterAbilityModifyStat stattype="WeaponsSkillBonus" value="200" />
+      </Abilities>
+    </AbilityGroupEffect>
+    <!-- 攻击时降低玩家45%伤害抗性 -->
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" setvalue="true" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+              <Affliction identifier="deep_gunwound_reduce_45" strength="1.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+    <!-- 抗性 -->
+    <AbilityGroupInterval interval="5">
+      <Abilities>
+        <CharacterAbilityModifyResistance resistanceid="stun" multiplier="0.1" />
+      </Abilities>
+    </AbilityGroupInterval>
+    <!-- 暴力军阀 -->
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionAttackData weapontype="handheldranged" />
+        <AbilityConditionNearbyCharacterCount distance="1000" targettypes="Enemy" count="1" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="0.2" />
+      </Abilities>
+    </AbilityGroupEffect>
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionAttackData weapontype="handheldranged" />
+        <AbilityConditionNearbyCharacterCount distance="1000" targettypes="Enemy" count="2" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="0.2" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+</Talents>
