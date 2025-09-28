@@ -1,0 +1,1141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Randomevents>
+  <EventSprites>
+    <Sprite identifier="pigcat_1" texture="%ModDir%/Missions/icon/pigcat.png" sourcerect="9,8,252,223" origin="0.5,0.5" />
+    <Sprite identifier="pirate_reinforce" texture="%ModDir%/Missions/icon/destory.png" sourcerect="8,0,190,220" origin="0.5,0.5" />
+    <Sprite identifier="separatists_reinforce" texture="%ModDir%/Missions/icon/destory.png" sourcerect="7,239,264,235" origin="0.5,0.5" />
+    <Sprite identifier="coalition_reinforce" texture="%ModDir%/Missions/icon/destory.png" sourcerect="7,239,264,235" origin="0.5,0.5" />
+    <Sprite identifier="ghost_reinforce" texture="%ModDir%/Missions/icon/destory.png" sourcerect="275,244,264,235" origin="0.5,0.5" />
+    <Sprite identifier="grizzlies_reinforce" texture="%ModDir%/Missions/icon/destory.png" sourcerect="14,490,264,235" origin="0.5,0.5" />
+  </EventSprites>
+  <EventPrefabs>
+    <ScriptedEvent identifier="deep_abandoned_indestructible">
+      <!-- 废站无敌 -->
+      <TagAction criteria="structureidentifier:ff_x_wall" tag="targetwall" submarinetype="outpost" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:ff_y_wall" tag="targetwall" submarinetype="outpost" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:ff_x_wall_cables" tag="targetwall" submarinetype="outpost" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:inwalll90cables" tag="targetwall" submarinetype="outpost" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella25" tag="targetwall" submarinetype="outpost" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaglasse" tag="targetwall" submarinetype="outpost" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaglassf" tag="targetwall" submarinetype="outpost" continueifnotargetsfound="true" />
+      <StatusEffectAction targettag="targetwall">
+        <StatusEffect target="This" indestructible="true" />
+      </StatusEffectAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_contract_nonInteractable_false">
+      <!-- 确保合约门解锁 -->
+      <TagAction criteria="itemidentifier:windoweddoorwbuttons" tag="targetdoor" submarinetype="outpost" continueifnotargetsfound="true" />
+      <TagAction criteria="itemidentifier:hatchwbuttons" tag="targetdoor" submarinetype="outpost" continueifnotargetsfound="true" />
+      <StatusEffectAction targettag="targetdoor">
+        <StatusEffect target="This" NonInteractable="false" />
+      </StatusEffectAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_white_keycard_del">
+      <!-- 确保玩家身上的白卡删除 -->
+      <TagAction criteria="itemidentifier:deep_white_keycard" tag="targetkeycard" submarinetype="Any" continueifnotargetsfound="true" />
+      <StatusEffectAction targettag="targetkeycard">
+        <StatusEffect target="This">
+          <remove />
+        </StatusEffect>
+      </StatusEffectAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_beaconstation_indestructible">
+      <!-- 信标站无敌 -->
+      <TagAction criteria="structureidentifier:ff_x_wall" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:ff_y_wall" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:ff_x_wall_cables" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:inwalll90cables" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:verticalwindow" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:topwindow" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <!-- 遇难船壳 -->
+      <TagAction criteria="structureidentifier:ff_x_wall_wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:ff_x_wall_cables_wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:ff_y_wall_wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:inwalll90cables_wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella25wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaglassewrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaglassfwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <!-- 外壳 -->
+      <TagAction criteria="structureidentifier:shella90deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella16deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella34deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella0deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella04deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella14adeg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella52deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella16degb" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella25deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella45deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella32deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella14degb" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella43deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella51deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella47deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella60deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella18deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella70deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella90degcurve" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella45degb" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella45degc" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella45degd" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella57deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella40deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella61deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella17deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella34degb" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella26deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella54deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella38deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella42deg" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shellacombo11" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shellacombo12" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shellacap0dega" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shellacap0degb" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shellacap90dega" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shellacap90degb" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <!-- 遇难外壳 -->
+      <TagAction criteria="structureidentifier:shella90degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella16degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella34degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella0degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella04degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella14adegwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella52degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella16degbwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella25degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella45degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella32degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella14degbwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella43degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella51degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella47degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella60degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella18degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella70degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella90degcurvewrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella45degbwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella45degcwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella45degdwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella57degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella40degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella61degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella17degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella34degbwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella26degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella54degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella38degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shella42degwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shellacombo11wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shellacombo12wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shellacap0degawrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shellacap0degbwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shellacap90degawrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:shellacap90degbwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <!-- 小艇外壳 -->
+      <TagAction criteria="structureidentifier:sshella01" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella02" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella04" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella05" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaa06" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaa07" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaa08" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaa09" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaa010" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaa011" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella14" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella15a" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella15b" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella15c" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella17a" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella17b" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella17c" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella18" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella19" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella20" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella21" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella22" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella23" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella24" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella25" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella26" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella27" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella28" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella30" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella32b" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella32c" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella32d" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella36" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella37" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella38" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella39" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella40" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella41" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaglassa" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaglassb" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaglassc" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaglassd" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaglasse" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaglassf" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <!-- 遇难小艇外壳 -->
+      <TagAction criteria="structureidentifier:sshella01wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella02wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella04wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella05wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaa06wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaa07wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaa08wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaa09wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaa010wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaa011wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella14wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella15awrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella15bwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella15cwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella17awrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella17bwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella17cwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella18wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella19wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella20wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella21wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella22wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella23wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella24wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella25wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella26wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella27wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella28wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella30wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella32bwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella32cwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella32dwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella36wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella37wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella38wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella39wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella40wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshella41wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaglassawrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaglassbwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaglasscwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaglassdwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaglassewrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:sshellaglassfwrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <!-- 尾翼 -->
+      <TagAction criteria="structureidentifier:tailfinep1" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:tailfinep2" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:tailfinfp3" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:exta_front" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontb" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontc" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontd" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfronte" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontg1p1" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontg1p2" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontg1p3" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontg2p1" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontg2p2" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontg2p3" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <!-- 遇难船首 -->
+      <TagAction criteria="structureidentifier:exta_front_Wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontb_Wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontc_Wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontd_Wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfronte_Wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontg1p1_Wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontg1p2_Wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontg1p3_Wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontg2p1_Wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontg2p2_Wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:subfrontg2p3_Wrecked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <!-- 冰 -->
+      <TagAction criteria="structureidentifier:icewall" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:icewallcracked" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:icewall90" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="structureidentifier:icewallcracked90" tag="targetwall" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <!-- 门 -->
+      <TagAction criteria="itemidentifier:door" tag="targetdoor" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="itemidentifier:windoweddoor" tag="targetdoor" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="itemidentifier:hatch" tag="targetdoor" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="itemidentifier:doorwbuttons" tag="targetdoor" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="itemidentifier:windoweddoorwbuttons" tag="targetdoor" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="itemidentifier:hatchwbuttons" tag="targetdoor" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <!-- 遇难门 -->
+      <TagAction criteria="itemidentifier:doorwrecked" tag="targetdoor" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="itemidentifier:windoweddoorwrecked" tag="targetdoor" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="itemidentifier:hatchwrecked" tag="targetdoor" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="itemidentifier:doorwbuttonswrecked" tag="targetdoor" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="itemidentifier:windoweddoorwbuttonswrecked" tag="targetdoor" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <TagAction criteria="itemidentifier:hatchwbuttonswrecked" tag="targetdoor" submarinetype="beaconstation" continueifnotargetsfound="true" />
+      <StatusEffectAction targettag="targetwall">
+        <StatusEffect target="This">
+          <Explosion range="500" force="0.0" camerashake="0" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" structuredamage="-400" itemdamage="-100"></Explosion>
+        </StatusEffect>
+        <StatusEffect target="This" delay="2" setvalue="true" indestructible="true" />
+      </StatusEffectAction>
+      <StatusEffectAction targettag="targetdoor">
+        <StatusEffect target="This" InvulnerabletoDamage="true"></StatusEffect>
+      </StatusEffectAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_pigcat_easy" commonness="200">
+      <SpawnAction npcsetidentifier="deep_outpostnpcs" npcidentifier="deep_pigcat_easy" targettag="deep_pigcat_easy_captain" spawnlocation="Outpost" spawnpointtype="Path" targetmoduletags="adminmodule" />
+      <TagAction criteria="player" tag="player" />
+      <TriggerAction target1tag="deep_pigcat_easy_captain" target2tag="player" applytotarget2="triggerer_player" radius="100" waitforinteraction="true" />
+      <NPCWaitAction npctag="deep_pigcat_easy_captain" wait="true" />
+      <ConversationAction targettag="triggerer_player" text="EventText.deep_pigcat_easy.c1" eventsprite="pigcat_1">
+        <Option text="EventText.deep_pigcat_easy.mine">
+          <MissionAction missionidentifier="deep_mine_saltpeter_mineral" />
+          <MissionAction missionidentifier="deep_mine_sulfur_mineral" />
+          <ConversationAction targettag="triggerer_player" text="EventText.deep_pigcat_easy.mine2"></ConversationAction>
+        </Option>
+        <Option text="EventText.deep_pigcat_easy.money">
+          <MissionAction missionidentifier="deep_clear_wreck" />
+          <MissionAction missionidentifier="deep_clear_husk_beacon" />
+          <MissionAction missionidentifier="deep_beacon_fight_pirate_normal" />
+          <ConversationAction targettag="triggerer_player" text="EventText.deep_pigcat_easy.money2"></ConversationAction>
+        </Option>
+        <Option text="EventText.deep_pigcat_medium.wangdao">
+          <MissionAction missionidentifier="deep_beacon_fight_pirate_hard" />
+          <ConversationAction targettag="triggerer_player" text="EventText.deep_pigcat_medium.wangdao2"></ConversationAction>
+        </Option>
+      </ConversationAction>
+      <NPCWaitAction npctag="deep_pigcat_easy_captain" wait="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_pigcat_medium" commonness="200">
+      <SpawnAction npcsetidentifier="deep_outpostnpcs" npcidentifier="deep_pigcat_medium" targettag="deep_pigcat_medium_captain" spawnlocation="Outpost" spawnpointtype="Path" targetmoduletags="adminmodule" />
+      <TagAction criteria="player" tag="player" />
+      <TriggerAction target1tag="deep_pigcat_medium_captain" target2tag="player" applytotarget2="triggerer_player" radius="100" waitforinteraction="true" />
+      <NPCWaitAction npctag="deep_pigcat_medium_captain" wait="true" />
+      <ConversationAction targettag="triggerer_player" text="EventText.deep_pigcat_medium.c1" eventsprite="pigcat_1">
+        <Option text="EventText.deep_pigcat_medium.mine">
+          <MissionAction missionidentifier="deep_mine_saltpeter_mineral" />
+          <MissionAction missionidentifier="deep_mine_sulfur_mineral" />
+          <ConversationAction targettag="triggerer_player" text="EventText.deep_pigcat_medium.mine2"></ConversationAction>
+        </Option>
+        <Option text="EventText.deep_pigcat_medium.money">
+          <MissionAction missionidentifier="deep_clear_wreck" />
+          <MissionAction missionidentifier="deep_clear_husk_beacon" />
+          <MissionAction missionidentifier="deep_beacon_fight_pirate_normal" />
+          <ConversationAction targettag="triggerer_player" text="EventText.deep_pigcat_medium.money2"></ConversationAction>
+        </Option>
+        <Option text="EventText.deep_pigcat_medium.wangdao">
+          <MissionAction missionidentifier="deep_clear_husk_ruin" />
+          <MissionAction missionidentifier="deep_beacon_fight_2" />
+          <ConversationAction targettag="triggerer_player" text="EventText.deep_pigcat_medium.wangdao2"></ConversationAction>
+        </Option>
+      </ConversationAction>
+      <NPCWaitAction npctag="deep_pigcat_medium_captain" wait="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_pirate_reinforce_easy_end" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_reinforce_end.c1" dialogtype="Small" eventsprite="pirate_reinforce" />
+      <WaitAction time="10" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_soldier" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_scout" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_rookie" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction itemidentifier="deep_white_keycard" targetinventory="reinforce" targettag="deep_keycard" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_pirate_reinforce_normal_end" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_reinforce_end.c1" dialogtype="Small" eventsprite="pirate_reinforce" />
+      <WaitAction time="10" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_leader_normal" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_leader_normal" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_soldier" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_soldier" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_scout" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_heavy" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction itemidentifier="deep_white_keycard" targetinventory="reinforce" targettag="deep_keycard" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_pirate_reinforce_hard_end" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_reinforce_end.c1" dialogtype="Small" eventsprite="pirate_reinforce" />
+      <WaitAction time="10" />
+      <SpawnAction npcsetidentifier="deep_pirate_elite" npcidentifier="deep_pirate_leader_hard_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate_elite" npcidentifier="deep_pirate_heavy_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_leader_hard" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_scout" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_soldier" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_soldier" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction itemidentifier="deep_white_keycard" targetinventory="reinforce" targettag="deep_keycard" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_separatists_reinforce_normal_end" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_reinforce_end.c1" dialogtype="Small" eventsprite="separatists_reinforce" />
+      <WaitAction time="10" />
+      <SpawnAction npcsetidentifier="deep_separatists_hard" npcidentifier="deep_separatist_leader_hard" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_moderate" npcidentifier="deep_separatist_soldier_moderate" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_moderate" npcidentifier="deep_separatist_heavy_moderate" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_hard" npcidentifier="deep_separatist_dreadnaught" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_moderate" npcidentifier="deep_separatist_blaster_moderate" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_soldier_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_heavy_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_sniper_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction itemidentifier="deep_white_keycard" targetinventory="reinforce" targettag="deep_keycard" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_separatists_reinforce_hard_end" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_reinforce_end.c1" dialogtype="Small" eventsprite="separatists_reinforce" />
+      <WaitAction time="10" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_leader_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_hard" npcidentifier="deep_separatist_heavy_hard" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_hard" npcidentifier="deep_separatist_sniper_hard" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_hard" npcidentifier="deep_separatist_leader_hard" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_hard" npcidentifier="deep_separatist_blaster_hard" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_heavy_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_sniper_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_hard" npcidentifier="deep_separatist_striker_hard" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction itemidentifier="deep_white_keycard" targetinventory="reinforce" targettag="deep_keycard" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_coalition_reinforce_hard_end" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_reinforce_end.c1" dialogtype="Small" eventsprite="coalition_reinforce" />
+      <WaitAction time="10" />
+      <SpawnAction npcsetidentifier="deep_co_elite" npcidentifier="deep_co_leader_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_co" npcidentifier="deep_co_sniper" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_co" npcidentifier="deep_co_grenadier" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_co" npcidentifier="deep_co_grenadier" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_co" npcidentifier="deep_co_leader" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_co_elite" npcidentifier="deep_co_heavy_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_co_elite" npcidentifier="deep_co_sniper_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_co" npcidentifier="deep_co_heavy" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction itemidentifier="deep_white_keycard" targetinventory="reinforce" targettag="deep_keycard" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_ghost_reinforce_end" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_reinforce_end.c1" dialogtype="Small" eventsprite="ghost_reinforce" />
+      <WaitAction time="10" />
+      <SpawnAction npcsetidentifier="deep_ghost" npcidentifier="deep_ghost_Fearless_Vanguard" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="0.5" />
+      <SpawnAction npcsetidentifier="deep_ghost" npcidentifier="deep_ghost_leader" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="0.5" />
+      <SpawnAction npcsetidentifier="deep_ghost" npcidentifier="deep_ghost_sniper" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="0.5" />
+      <SpawnAction npcsetidentifier="deep_ghost" npcidentifier="deep_ghost_grenadier" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="0.5" />
+      <SpawnAction npcsetidentifier="deep_ghost" npcidentifier="deep_ghost_sniper" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="0.5" />
+      <SpawnAction npcsetidentifier="deep_ghost_elite" npcidentifier="deep_ghost_Fearless_Vanguard_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="0.5" />
+      <SpawnAction npcsetidentifier="deep_ghost_elite" npcidentifier="deep_ghost_sniper_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="0.5" />
+      <SpawnAction npcsetidentifier="deep_ghost_elite" npcidentifier="deep_ghost_grenadier_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction itemidentifier="deep_white_keycard" targetinventory="reinforce" targettag="deep_keycard" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_grizzlies_reinforce_end" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_reinforce_end.c1" dialogtype="Small" eventsprite="grizzlies_reinforce" />
+      <WaitAction time="10" />
+      <SpawnAction npcsetidentifier="deep_grizzlies_elite" npcidentifier="deep_grizzlies_leader_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_grizzlies" npcidentifier="deep_grizzlies_political_commissar" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_grizzlies" npcidentifier="deep_grizzlies_machinegun_fort" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_grizzlies" npcidentifier="deep_grizzlies_heavy_gunner" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_grizzlies" npcidentifier="deep_grizzlies_heavy_gl" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_grizzlies" npcidentifier="deep_grizzlies_team_juggernaut" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_grizzlies_elite" npcidentifier="deep_grizzlies_machinegun_fort_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_grizzlies_elite" npcidentifier="deep_grizzlies_heavy_gl_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction itemidentifier="deep_white_keycard" targetinventory="reinforce" targettag="deep_keycard" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_pirate_reinforce_easy_20min" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_pirate_reinforce_20min.c1" dialogtype="Small" eventsprite="pirate_reinforce" />
+      <WaitAction time="1190" />
+      <ConversationAction text="EventText.deep_pirate_reinforce_20min.c2" dialogtype="Small" eventsprite="pirate_reinforce" />
+      <WaitAction time="10" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_soldier" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_soldier" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_leader_easy" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_pirate_reinforce_normal_20min" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_pirate_reinforce_20min.c1" dialogtype="Small" eventsprite="pirate_reinforce" />
+      <WaitAction time="1190" />
+      <ConversationAction text="EventText.deep_pirate_reinforce_20min.c2" dialogtype="Small" eventsprite="pirate_reinforce" />
+      <WaitAction time="10" />
+      <SpawnAction npcsetidentifier="deep_pirate_elite" npcidentifier="deep_pirate_leader_normal_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate_elite" npcidentifier="deep_pirate_soldier_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate_elite" npcidentifier="deep_pirate_soldier_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_heavy" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_heavy" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate_elite" npcidentifier="deep_pirate_scout_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_pirate_reinforce_hard_20min" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_pirate_reinforce_20min.c1" dialogtype="Small" eventsprite="pirate_reinforce" />
+      <WaitAction time="1190" />
+      <ConversationAction text="EventText.deep_pirate_reinforce_20min.c2" dialogtype="Small" eventsprite="pirate_reinforce" />
+      <WaitAction time="10" />
+      <SpawnAction npcsetidentifier="deep_pirate_elite" npcidentifier="deep_pirate_leader_hard_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate_elite" npcidentifier="deep_pirate_heavy_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate_elite" npcidentifier="deep_pirate_heavy_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate_elite" npcidentifier="deep_pirate_soldier_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate_elite" npcidentifier="deep_pirate_soldier_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_pirate_elite" npcidentifier="deep_pirate_scout_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_separatists_reinforce_normal_20min" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_separatists_reinforce_20min.c1" dialogtype="Small" eventsprite="separatists_reinforce" />
+      <WaitAction time="1190" />
+      <ConversationAction text="EventText.deep_separatists_reinforce_20min.c2" dialogtype="Small" eventsprite="separatists_reinforce" />
+      <WaitAction time="10" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_leader_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_heavy_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_heavy_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_soldier_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_soldier_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_sniper_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_separatists_reinforce_hard_20min" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_separatists_reinforce_20min.c1" dialogtype="Small" eventsprite="separatists_reinforce" />
+      <WaitAction time="1190" />
+      <ConversationAction text="EventText.deep_separatists_reinforce_20min.c2" dialogtype="Small" eventsprite="separatists_reinforce" />
+      <WaitAction time="10" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_leader_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_heavy_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_heavy_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_blaster_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_sniper_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_separatists_elite" npcidentifier="deep_separatist_sniper_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_coalition_reinforce_hard_20min" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_coalition_reinforce_20min.c1" dialogtype="Small" eventsprite="coalition_reinforce" />
+      <WaitAction time="1190" />
+      <ConversationAction text="EventText.deep_coalition_reinforce_20min.c2" dialogtype="Small" eventsprite="coalition_reinforce" />
+      <WaitAction time="10" />
+      <SpawnAction npcsetidentifier="deep_co_elite" npcidentifier="deep_co_heavy_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_co_elite" npcidentifier="deep_co_heavy_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_co_elite" npcidentifier="deep_co_sniper_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_co_elite" npcidentifier="deep_co_sniper_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_co_elite" npcidentifier="deep_co_leader_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_co_elite" npcidentifier="deep_co_blaster_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_ghost_reinforce_20min" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_ghost_reinforce_20min.c1" dialogtype="Small" eventsprite="ghost_reinforce" />
+      <WaitAction time="1190" />
+      <ConversationAction text="EventText.deep_ghost_reinforce_20min.c2" dialogtype="Small" eventsprite="ghost_reinforce" />
+      <WaitAction time="10" />
+      <SpawnAction npcsetidentifier="deep_ghost_elite" npcidentifier="deep_ghost_Fearless_Vanguard_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="0.5" />
+      <SpawnAction npcsetidentifier="deep_ghost_elite" npcidentifier="deep_ghost_sniper_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="0.5" />
+      <SpawnAction npcsetidentifier="deep_ghost_elite" npcidentifier="deep_ghost_grenadier_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="0.5" />
+      <SpawnAction npcsetidentifier="deep_ghost_elite" npcidentifier="deep_ghost_grenadier_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="0.5" />
+      <SpawnAction npcsetidentifier="deep_ghost_elite" npcidentifier="deep_ghost_leader_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="0.5" />
+      <SpawnAction npcsetidentifier="deep_ghost_elite" npcidentifier="deep_ghost_sniper_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_grizzlies_reinforce_20min" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_grizzlies_reinforce_20min.c1" dialogtype="Small" eventsprite="grizzlies_reinforce" />
+      <WaitAction time="1190" />
+      <ConversationAction text="EventText.deep_grizzlies_reinforce_20min.c2" dialogtype="Small" eventsprite="grizzlies_reinforce" />
+      <WaitAction time="10" />
+      <SpawnAction npcsetidentifier="deep_grizzlies_elite" npcidentifier="deep_grizzlies_machinegun_fort_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_grizzlies_elite" npcidentifier="deep_grizzlies_machinegun_fort_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_grizzlies_elite" npcidentifier="deep_grizzlies_heavy_gunner_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_grizzlies_elite" npcidentifier="deep_grizzlies_heavy_gunner_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_grizzlies_elite" npcidentifier="deep_grizzlies_heavy_gl_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+      <WaitAction time="1" />
+      <SpawnAction npcsetidentifier="deep_grizzlies_elite" npcidentifier="deep_grizzlies_leader_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_pigcatman_reinforce_easy" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <RNGAction chance="0.5">
+        <Success>
+          <WaitAction time="1" />
+          <ConversationAction text="EventText.deep_pigcatman_reinforce_call.c1" dialogtype="Small" eventsprite="pigcat_1" />
+          <WaitAction time="300" />
+          <ConversationAction text="EventText.deep_pigcatman_reinforce.c1" dialogtype="Small" eventsprite="pigcat_1" />
+          <WaitAction time="5" />
+          <SpawnAction npcsetidentifier="deep_outpostnpcs" npcidentifier="deep_pigcat_reinforce_easy" LootingIsStealing="false" TeamID="1" targettag="reinforce" spawnlocation="Outpost" targetmoduletags="adminmodule" AllowInPlayerView="false" />
+        </Success>
+      </RNGAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_beacon_pirate_normal" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="0" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_leader_normal" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="BeaconStation" spawnpointtag="saferoom" spawnpointtype="human" RequireSpawnPointTag="true" AllowInPlayerView="false" />
+      <WaitAction time="0" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_soldier" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="BeaconStation" spawnpointtag="saferoom" spawnpointtype="human" RequireSpawnPointTag="true" AllowInPlayerView="false" />
+      <WaitAction time="0" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_soldier" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="BeaconStation" spawnpointtag="saferoom" spawnpointtype="human" RequireSpawnPointTag="true" AllowInPlayerView="false" />
+      <WaitAction time="0" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_scout" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="BeaconStation" spawnpointtag="saferoom" spawnpointtype="human" RequireSpawnPointTag="true" AllowInPlayerView="false" />
+      <WaitAction time="0" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_heavy" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="BeaconStation" spawnpointtag="saferoom" spawnpointtype="human" RequireSpawnPointTag="true" AllowInPlayerView="false" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_beacon_fight_pirate.c1" dialogtype="Small" eventsprite="pirate_reinforce" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="deep_beacon_pirate_hard" commonness="150">
+      <TagAction criteria="player" tag="player" />
+      <WaitAction time="0" />
+      <SpawnAction npcsetidentifier="deep_pirate_elite" npcidentifier="deep_pirate_soldier_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="BeaconStation" spawnpointtag="saferoom" spawnpointtype="human" RequireSpawnPointTag="true" AllowInPlayerView="false" />
+      <WaitAction time="0" />
+      <SpawnAction npcsetidentifier="deep_pirate_elite" npcidentifier="deep_pirate_heavy_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="BeaconStation" spawnpointtag="saferoom" spawnpointtype="human" RequireSpawnPointTag="true" AllowInPlayerView="false" />
+      <WaitAction time="0" />
+      <SpawnAction npcsetidentifier="deep_pirate_elite" npcidentifier="deep_pirate_leader_hard_elite" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="BeaconStation" spawnpointtag="saferoom" spawnpointtype="human" RequireSpawnPointTag="true" AllowInPlayerView="false" />
+      <WaitAction time="0" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_scout" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="BeaconStation" spawnpointtag="saferoom" spawnpointtype="human" RequireSpawnPointTag="true" AllowInPlayerView="false" />
+      <WaitAction time="0" />
+      <SpawnAction npcsetidentifier="deep_pirate" npcidentifier="deep_pirate_scout" LootingIsStealing="false" TeamID="0" targettag="reinforce" spawnlocation="BeaconStation" spawnpointtag="saferoom" spawnpointtype="human" RequireSpawnPointTag="true" AllowInPlayerView="false" />
+      <WaitAction time="5" />
+      <ConversationAction text="EventText.deep_beacon_fight_pirate.c1" dialogtype="Small" eventsprite="pirate_reinforce" />
+    </ScriptedEvent>
+  </EventPrefabs>
+  <EventSet identifier="deep_outpost_mission_easy" leveltype="outpost" locationtype="deep_mobile_city_typhoon,outpost,city,research,military,mine,colony,settlement,construction,camp,base,blockade,survey,extraction,study,lab,clinic,hospital,surgery,hydroponics,biosphere,nourishment,factory,shipyard,fusion,MilitaryForces,HuskChurch,SinkingCircus" allowatstart="true" minleveldifficulty="0" maxleveldifficulty="15" additive="true" selectalways="true" chooserandom="false" ignorecooldown="true">
+    <EventSet identifier="deep_pigcat_easy_man" allowatstart="true" minleveldifficulty="0" maxleveldifficulty="100" chooserandom="false" campaign="false" selectalways="true" additive="true">
+      <ScriptedEvent identifier="deep_pigcat_easy" commonness="100" probability="1" triggercooldown="false" />
+    </EventSet>
+  </EventSet>
+  <EventSet identifier="deep_outpost_mission_medium" leveltype="outpost" locationtype="deep_mobile_city_typhoon,outpost,city,research,military,mine,colony,settlement,construction,camp,base,blockade,survey,extraction,study,lab,clinic,hospital,surgery,hydroponics,biosphere,nourishment,factory,shipyard,fusion,MilitaryForces,HuskChurch,SinkingCircus" allowatstart="true" minleveldifficulty="15" maxleveldifficulty="100" additive="true" selectalways="true" chooserandom="false" ignorecooldown="true">
+    <EventSet identifier="deep_pigcat_medium_man" allowatstart="true" minleveldifficulty="0" maxleveldifficulty="100" chooserandom="false" campaign="false" selectalways="true" additive="true">
+      <ScriptedEvent identifier="deep_pigcat_medium" commonness="100" probability="1" triggercooldown="false" />
+    </EventSet>
+  </EventSet>
+  <EventSet identifier="deep_outpost_indestructible" leveltype="outpost" locationtype="deep_mobile_city_typhoon" allowatstart="true" minleveldifficulty="15" maxleveldifficulty="100" additive="true" selectalways="true" chooserandom="false" ignorecooldown="true">
+    <EventSet identifier="deep_outpost_indestructible_2" allowatstart="true" minleveldifficulty="0" maxleveldifficulty="100" chooserandom="false" campaign="false" selectalways="true" additive="true">
+      <ScriptedEvent identifier="deep_abandoned_indestructible" commonness="100" probability="1" triggercooldown="false" />
+    </EventSet>
+  </EventSet>
+  <EventSet identifier="deep_outpost_event" leveltype="outpost" locationtype="deep_mobile_city_typhoon" allowatstart="true" minleveldifficulty="0" maxleveldifficulty="80" additive="true" selectalways="true" chooserandom="false" ignorecooldown="true">
+    <!-- ****************************************************************************************************************************************************** -->
+    <!-- Mission EventSets -->
+    <!-- ****************************************************************************************************************************************************** -->
+    <!-- Biome specific sets. Difficulty progression. -->
+    <EventSet identifier="missionevents.coldcaverns.start" minleveldifficulty="0" maxleveldifficulty="1" allowatstart="true" eventcount="3" chooserandom="false" exhaustible="true">
+      <ScriptedEvent identifier="missionevent_cargoany" />
+      <ScriptedEvent identifier="missionevent_killmonster_set1" />
+      <ScriptedEvent identifier="missionevent_collectminerals_mainpath" />
+    </EventSet>
+    <EventSet identifier="missionevents.coldcaverns.basic" minleveldifficulty="1" maxleveldifficulty="5" allowatstart="true" setcount="3" chooserandom="false" exhaustible="true">
+      <EventSet identifier="missionevents.coldcaverns.basic.cargo" chooserandom="true" allowatstart="true">
+        <ScriptedEvent identifier="missionevent_cargoany" commonness="50" />
+        <ScriptedEvent identifier="missionevent_cargoweaponscoalition" commonness="25" faction="coalition" />
+        <ScriptedEvent identifier="missionevent_cargoexplosiveseparatists" commonness="25" faction="separatists" />
+      </EventSet>
+      <EventSet identifier="missionevents.coldcaverns.basic.monster" chooserandom="true" allowatstart="true">
+        <ScriptedEvent identifier="missionevent_killswarm_set1" commonness="25" />
+        <ScriptedEvent identifier="missionevent_killmonster_set1" commonness="75" />
+      </EventSet>
+      <EventSet identifier="missionevents.coldcaverns.basic.mining" chooserandom="true" allowatstart="true">
+        <ScriptedEvent identifier="missionevent_collectminerals_mainpath" commonness="50" />
+        <ScriptedEvent identifier="missionevent_collectminerals_set1" commonness="50" />
+      </EventSet>
+    </EventSet>
+    <EventSet identifier="missionevents.coldcaverns.advanced" minleveldifficulty="5" maxleveldifficulty="15" allowatstart="true" chooserandom="false" exhaustible="true">
+      <EventSet identifier="missionevents.coldcaverns.advanced.general" chooserandom="true" setcount="2" allowatstart="true">
+        <EventSet identifier="missionevents.coldcaverns.advanced.general.cargo" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_cargoany" commonness="50" />
+          <ScriptedEvent identifier="missionevent_cargoweaponscoalition" commonness="50" faction="coalition" />
+          <ScriptedEvent identifier="missionevent_cargoexplosiveseparatists" commonness="50" faction="separatists" />
+        </EventSet>
+        <EventSet identifier="missionevents.coldcaverns.advanced.general.monster" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_killswarm_set1" commonness="20" />
+          <ScriptedEvent identifier="missionevent_killmonster_set1" commonness="40" />
+          <ScriptedEvent identifier="missionevent_killmonster_set2" commonness="40" />
+        </EventSet>
+        <EventSet identifier="missionevents.coldcaverns.advanced.general.mining" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_collectminerals_set1" commonness="75" />
+          <ScriptedEvent identifier="missionevent_collectminerals_set2" commonness="25" />
+        </EventSet>
+      </EventSet>
+      <EventSet identifier="missionevents.coldcaverns.advanced.faction" chooserandom="true" eventcount="1" allowatstart="true">
+        <ScriptedEvent identifier="missionevent_escort1coalition" commonness="100" faction="coalition" />
+        <ScriptedEvent identifier="missionevent_escort1separatists" commonness="100" faction="separatists" />
+      </EventSet>
+    </EventSet>
+    <EventSet identifier="missionevents.europanridge.basic" minleveldifficulty="15" maxleveldifficulty="25" allowatstart="true" chooserandom="false" exhaustible="true">
+      <EventSet identifier="missionevents.europanridge.basic.general" chooserandom="true" setcount="3" allowatstart="true">
+        <EventSet identifier="missionevents.europanridge.basic.general.cargo" chooserandom="true" commonness="200" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_cargoany" commonness="30" />
+          <ScriptedEvent identifier="missionevent_cargoweaponscoalition" commonness="35" faction="coalition" />
+          <ScriptedEvent identifier="missionevent_cargoexplosiveseparatists" commonness="35" faction="separatists" />
+        </EventSet>
+        <EventSet identifier="missionevents.europanridge.basic.general.swarm" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_killswarm_set1" commonness="25" />
+          <ScriptedEvent identifier="missionevent_killswarm_set2" commonness="25" />
+        </EventSet>
+        <EventSet identifier="missionevents.europanridge.basic.general.monster" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_killmonster_set2" commonness="75" />
+          <ScriptedEvent identifier="missionevent_killmonster_set3" commonness="25" />
+        </EventSet>
+        <EventSet identifier="missionevents.europanridge.basic.general.salvage" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_salvagewreck" commonness="100" />
+          <ScriptedEvent identifier="missionevent_salvagewreckcargo" commonness="100" />
+        </EventSet>
+        <EventSet identifier="missionevents.europanridge.basic.general.nest" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_crawlernest" commonness="75" />
+          <ScriptedEvent identifier="missionevent_mudraptornest" commonness="25" />
+        </EventSet>
+        <EventSet identifier="missionevents.europanridge.basic.general.mining" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_collectminerals_set1" commonness="25" />
+          <ScriptedEvent identifier="missionevent_collectminerals_set2" commonness="75" />
+        </EventSet>
+      </EventSet>
+      <EventSet identifier="missionevents.europanridge.basic.faction" chooserandom="true" eventcount="1" allowatstart="true">
+        <ScriptedEvent identifier="missionevent_escort1coalition,missionevent_escort2coalition,missionevent_escort3coalition" commonness="100" faction="coalition" />
+        <ScriptedEvent identifier="missionevent_escort1separatists,missionevent_escort2separatists,missionevent_escort3separatists" commonness="100" faction="separatists" />
+      </EventSet>
+    </EventSet>
+    <EventSet identifier="missionevents.europanridge.advanced" minleveldifficulty="25" maxleveldifficulty="35" allowatstart="true" chooserandom="false" exhaustible="true">
+      <EventSet identifier="missionevents.europanridge.advanced.general" chooserandom="true" setcount="3" allowatstart="true">
+        <EventSet identifier="missionevents.europanridge.advanced.general.cargo" chooserandom="true" commonness="200" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_cargoany" commonness="20" />
+          <ScriptedEvent identifier="missionevent_cargoweaponscoalition" commonness="40" faction="coalition" />
+          <ScriptedEvent identifier="missionevent_cargoexplosiveseparatists" commonness="40" faction="separatists" />
+        </EventSet>
+        <EventSet identifier="missionevents.europanridge.advanced.general.swarm" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_killswarm_set1" commonness="25" />
+          <ScriptedEvent identifier="missionevent_killswarm_set2" commonness="50" />
+          <ScriptedEvent identifier="missionevent_killswarm_set3" commonness="25" />
+        </EventSet>
+        <EventSet identifier="missionevents.europanridge.advanced.general.monster" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_killmonster_set2" commonness="25" />
+          <ScriptedEvent identifier="missionevent_killmonster_set3" commonness="75" />
+        </EventSet>
+        <EventSet identifier="missionevents.europanridge.advanced.general.salvage" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_salvagewreck" />
+          <ScriptedEvent identifier="missionevent_salvagewreckcargo" />
+          <ScriptedEvent identifier="missionevent_salvagewreckartifact" />
+        </EventSet>
+        <EventSet identifier="missionevents.europanridge.advanced.general.nest" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_crawlernest" commonness="50" />
+          <ScriptedEvent identifier="missionevent_mudraptornest" commonness="25" />
+          <ScriptedEvent identifier="missionevent_tigerthreshernest" commonness="25" />
+        </EventSet>
+        <EventSet identifier="missionevents.europanridge.advanced.general.mining" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_collectminerals_set1" commonness="25" />
+          <ScriptedEvent identifier="missionevent_collectminerals_set2" commonness="50" />
+          <ScriptedEvent identifier="missionevent_collectminerals_set3" commonness="25" />
+        </EventSet>
+      </EventSet>
+      <EventSet identifier="missionevents.europanridge.advanced.faction" chooserandom="true" eventcount="1" allowatstart="true">
+        <ScriptedEvent identifier="missionevent_escort2coalition,missionevent_escort3coalition,missionevent_escort4coalition" commonness="100" faction="coalition" />
+        <ScriptedEvent identifier="missionevent_escort2separatists,missionevent_escort3separatists,missionevent_escort4separatists" commonness="100" faction="separatists" />
+        <ScriptedEvent identifier="missionevent_jailbreak_separatists" commonness="25" faction="separatists" />
+        <ScriptedEvent identifier="missionevent_jailbreak_coalition" commonness="25" faction="coalition" />
+        <ScriptedEvent identifier="missionevent_pirate1" commonness="50" faction="coalition" />
+        <ScriptedEvent identifier="missionevent_pirate1separatists" commonness="50" faction="separatists" />
+      </EventSet>
+    </EventSet>
+    <EventSet identifier="missionevents.theaphoticplateau" minleveldifficulty="35" maxleveldifficulty="50" allowatstart="true" chooserandom="false" exhaustible="true">
+      <EventSet identifier="missionevents.theaphoticplateau.general" chooserandom="true" setcount="3" allowatstart="true">
+        <EventSet identifier="missionevents.theaphoticplateau.general.cargo" chooserandom="true" commonness="200" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_cargoany" commonness="10" />
+          <ScriptedEvent identifier="missionevent_cargo_difficult" commonness="20" />
+          <ScriptedEvent identifier="missionevent_cargoweaponscoalition" commonness="35" faction="coalition" />
+          <ScriptedEvent identifier="missionevent_cargoexplosiveseparatists" commonness="13" faction="separatists" />
+          <ScriptedEvent identifier="missionevent_cargoexplosiveseparatistsvolatile" commonness="22" faction="separatists" />
+        </EventSet>
+        <EventSet identifier="missionevents.theaphoticplateau.general.swarm" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_killswarm_set2" commonness="50" />
+          <ScriptedEvent identifier="missionevent_killswarm_set3" commonness="50" />
+        </EventSet>
+        <EventSet identifier="missionevents.theaphoticplateau.general.monster" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_killmonster_set3" commonness="50" />
+          <ScriptedEvent identifier="missionevent_killmonster_set4" commonness="50" />
+        </EventSet>
+        <EventSet identifier="missionevents.theaphoticplateau.general.salvage" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_salvageartifact" commonness="50" />
+          <ScriptedEvent identifier="missionevent_salvagewreck" commonness="15" />
+          <ScriptedEvent identifier="missionevent_salvagewreckcargo" commonness="15" />
+          <ScriptedEvent identifier="missionevent_salvagewreckartifact" commonness="15" />
+          <ScriptedEvent identifier="missionevent_wreckthalamus" commonness="15" />
+        </EventSet>
+        <EventSet identifier="missionevents.theaphoticplateau.general.nest" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_crawlernest_hard" commonness="33" />
+          <ScriptedEvent identifier="missionevent_mudraptornest" commmonness="33" />
+          <ScriptedEvent identifier="missionevent_tigerthreshernest" commonness="33" />
+        </EventSet>
+        <EventSet identifier="missionevents.theaphoticplateau.general.mining" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_collectminerals_set3" commonness="50" />
+          <ScriptedEvent identifier="missionevent_collectminerals_set4" commonness="50" />
+        </EventSet>
+        <EventSet identifier="missionevents.theaphoticplateau.general.ruin" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_scanruin" />
+        </EventSet>
+      </EventSet>
+      <EventSet identifier="missionevents.theaphoticplateau.faction" chooserandom="true" eventcount="1" allowatstart="true">
+        <ScriptedEvent identifier="missionevent_escort2coalition,missionevent_escort3coalition,missionevent_escort4coalition" commonness="100" faction="coalition" />
+        <ScriptedEvent identifier="missionevent_escort2separatists,missionevent_escort3separatists,missionevent_escort4separatists" commonness="100" faction="separatists" />
+        <ScriptedEvent identifier="missionevent_jailbreak_separatists" commonness="25" faction="separatists" />
+        <ScriptedEvent identifier="missionevent_jailbreak_coalition" commonness="25" faction="coalition" />
+        <ScriptedEvent identifier="missionevent_pirate1" commonness="100" faction="coalition" />
+        <ScriptedEvent identifier="missionevent_pirate1separatists" commonness="100" faction="separatists" />
+      </EventSet>
+    </EventSet>
+    <EventSet identifier="missionevents.greatsea" minleveldifficulty="50" maxleveldifficulty="65" allowatstart="true" chooserandom="false" exhaustible="true">
+      <EventSet identifier="missionevents.greatsea.general" chooserandom="true" setcount="3" allowatstart="true">
+        <EventSet identifier="missionevents.greatsea.general.cargo" chooserandom="true" commonness="200" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_cargoany" commonness="5" />
+          <ScriptedEvent identifier="missionevent_cargo_difficult" commonness="25" />
+          <ScriptedEvent identifier="missionevent_cargoweaponscoalition" commonness="35" faction="coalition" />
+          <ScriptedEvent identifier="missionevent_cargoexplosiveseparatists" commonness="13" faction="separatists" />
+          <ScriptedEvent identifier="missionevent_cargoexplosiveseparatistsvolatile" commonness="22" faction="separatists" />
+        </EventSet>
+        <EventSet identifier="missionevents.greatsea.general.swarm" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_killswarm_set3" commonness="50" />
+          <ScriptedEvent identifier="missionevent_killswarm_set4" commonness="50" />
+        </EventSet>
+        <EventSet identifier="missionevents.greatsea.general.monster" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_killmonster_set3" commonness="75" />
+          <ScriptedEvent identifier="missionevent_killmonster_set4" commonness="25" />
+        </EventSet>
+        <EventSet identifier="missionevents.greatsea.general.salvage" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_salvageartifact" commonness="40" />
+          <ScriptedEvent identifier="missionevent_salvageartifactabyss" commonness="20" />
+          <ScriptedEvent identifier="missionevent_salvagewreck" commonness="15" />
+          <ScriptedEvent identifier="missionevent_salvagewreckcargo" commonness="15" />
+          <ScriptedEvent identifier="missionevent_salvagewreckartifact" commonness="15" />
+          <ScriptedEvent identifier="missionevent_wreckthalamus" commonness="15" />
+        </EventSet>
+        <EventSet identifier="missionevents.greatsea.general.nest" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_crawlernest_hard" commonness="33" />
+          <ScriptedEvent identifier="missionevent_mudraptornest_hard" commmonness="33" />
+          <ScriptedEvent identifier="missionevent_tigerthreshernest_hard" commonness="33" />
+        </EventSet>
+        <EventSet identifier="missionevents.greatsea.general.mining" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_collectminerals_set2" commonness="25" />
+          <ScriptedEvent identifier="missionevent_collectminerals_set3" commonness="50" />
+          <ScriptedEvent identifier="missionevent_collectminerals_set4" commonness="25" />
+        </EventSet>
+        <EventSet identifier="missionevents.greatsea.general.ruin" chooserandom="true" commonness="200" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_scanruin" commonness="100" />
+          <ScriptedEvent identifier="missionevent_clearruin" commonness="100" />
+        </EventSet>
+      </EventSet>
+      <EventSet identifier="missionevents.greatsea.faction" chooserandom="true" eventcount="1" allowatstart="true">
+        <ScriptedEvent identifier="missionevent_escort2coalition,missionevent_escort3coalition,missionevent_escort4coalition" commonness="100" faction="coalition" />
+        <ScriptedEvent identifier="missionevent_escort2separatists,missionevent_escort3separatists,missionevent_escort4separatists" commonness="100" faction="separatists" />
+        <ScriptedEvent identifier="missionevent_jailbreak_separatists" commonness="25" faction="separatists" />
+        <ScriptedEvent identifier="missionevent_jailbreak_coalition" commonness="25" faction="coalition" />
+        <ScriptedEvent identifier="missionevent_pirate1" commonness="100" faction="coalition" />
+        <ScriptedEvent identifier="missionevent_pirate1separatists" commonness="100" faction="separatists" />
+      </EventSet>
+    </EventSet>
+    <EventSet identifier="missionevents.wastes" minleveldifficulty="65" maxleveldifficulty="100" allowatstart="true" chooserandom="false" exhaustible="true">
+      <EventSet identifier="missionevents.wastes.general" chooserandom="true" setcount="3" allowatstart="true">
+        <EventSet identifier="missionevents.wastes.general.cargo" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_cargo_difficult" commonness="30" />
+          <ScriptedEvent identifier="missionevent_cargoweaponscoalition" commonness="35" faction="coalition" />
+          <ScriptedEvent identifier="missionevent_cargoexplosiveseparatists" commonness="13" faction="separatists" />
+          <ScriptedEvent identifier="missionevent_cargoexplosiveseparatistsvolatile" commonness="22" faction="separatists" />
+        </EventSet>
+        <EventSet identifier="missionevents.wastes.general.swarm" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_killswarm_set3" commonness="15" />
+          <ScriptedEvent identifier="missionevent_killswarm_set4" commonness="65" />
+          <ScriptedEvent identifier="missionevent_killswarm_set5" commonness="20" />
+        </EventSet>
+        <EventSet identifier="missionevents.wastes.general.monster" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_killmonster_set3" commonness="25" />
+          <ScriptedEvent identifier="missionevent_killmonster_set4" commonness="75" />
+        </EventSet>
+        <EventSet identifier="missionevents.wastes.general.salvage" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_salvageartifact" commonness="40" />
+          <ScriptedEvent identifier="missionevent_salvageartifactabyss" commonness="20" />
+          <ScriptedEvent identifier="missionevent_salvagewreck" commonness="15" />
+          <ScriptedEvent identifier="missionevent_salvagewreckcargo" commonness="15" />
+          <ScriptedEvent identifier="missionevent_salvagewreckartifact" commonness="15" />
+          <ScriptedEvent identifier="missionevent_wreckthalamus" commonness="15" />
+        </EventSet>
+        <EventSet identifier="missionevents.wastes.general.nest" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_crawlernest_hard" commonness="20" />
+          <ScriptedEvent identifier="missionevent_mudraptornest" commmonness="40" />
+          <ScriptedEvent identifier="missionevent_tigerthreshernest" commonness="40" />
+        </EventSet>
+        <EventSet identifier="missionevents.wastes.general.mining" chooserandom="true" commonness="100" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_collectminerals_set3" commonness="25" />
+          <ScriptedEvent identifier="missionevent_collectminerals_set4" commonness="75" />
+        </EventSet>
+        <EventSet identifier="missionevents.wastes.general.ruin" chooserandom="true" commonness="200" allowatstart="true">
+          <ScriptedEvent identifier="missionevent_scanruin" commonness="50" />
+          <ScriptedEvent identifier="missionevent_clearruin2" commonness="150" />
+        </EventSet>
+      </EventSet>
+      <EventSet idenfitier="missionevents.wastes.faction" chooserandom="true" eventcount="1" allowatstart="true">
+        <ScriptedEvent identifier="missionevent_escort2coalition,missionevent_escort3coalition,missionevent_escort4coalition" commonness="100" faction="coalition" />
+        <ScriptedEvent identifier="missionevent_escort2separatists,missionevent_escort3separatists,missionevent_escort4separatists" commonness="100" faction="separatists" />
+        <ScriptedEvent identifier="missionevent_jailbreak_separatists" commonness="25" faction="separatists" />
+        <ScriptedEvent identifier="missionevent_jailbreak_coalition" commonness="25" faction="coalition" />
+        <ScriptedEvent identifier="missionevent_pirate1" commonness="100" faction="coalition" />
+        <ScriptedEvent identifier="missionevent_pirate1separatists" commonness="100" faction="separatists" />
+      </EventSet>
+    </EventSet>
+    <!-- generic clown missions -->
+    <EventSet identifier="outpostevents.clowns.missionevents" minleveldifficulty="0" maxleveldifficulty="100" allowatstart="true" chooserandom="true" exhaustible="true">
+      <ScriptedEvent identifier="missionevent_escort1clowns" commonness="50" faction="clowns" probability="0.8" />
+      <ScriptedEvent identifier="missionevent_clownoutbreak" commonness="50" faction="clowns" probability="0.8" />
+    </EventSet>
+    <!-- generic husk cult missions -->
+    <EventSet identifier="outpostevents.huskcult.missionevents" minleveldifficulty="0" maxleveldifficulty="100" allowatstart="true" chooserandom="true" exhaustible="true">
+      <ScriptedEvent identifier="missionevent_escort1huskcult" commonness="50" faction="huskcult" probability="0.8" />
+      <ScriptedEvent identifier="missionevent_cargohuskcult" commonness="50" faction="huskcult" probability="0.8" />
+    </EventSet>
+    <!-- ****************************************************************************************************************************************************** -->
+    <!-- Story EventSets -->
+    <!-- ****************************************************************************************************************************************************** -->
+    <!-- TODO: more sets here-->
+    <!-- low-difficulty random events -->
+    <EventSet identifier="outpostevents.easy.generic.randomevents" minleveldifficulty="0" maxleveldifficulty="30" allowatstart="true" chooserandom="true" onceperoutpost="true">
+      <OverrideEventCount locationtype="City" eventcount="3" />
+      <ScriptedEvent identifier="givingdirections" commonness="100" />
+      <ScriptedEvent identifier="goodsamaritan" commonness="100" />
+      <ScriptedEvent identifier="miketheidiot1" commonness="25" />
+      <ScriptedEvent identifier="Engineers_are_special" commonness="100" />
+      <ScriptedEvent identifier="fanclub" commonness="100" />
+      <ScriptedEvent identifier="shockjock" commonness="60" />
+      <ScriptedEvent identifier="manandhisraptor1" commonness="50" />
+      <ScriptedEvent identifier="assassinationofjacovsubra2" commonness="100" />
+      <ScriptedEvent identifier="assassinationofjacovsubra3" commonness="100" />
+      <ScriptedEvent identifier="propaganda" commonness="100" faction="coalition" />
+      <!-- technically a separatist event, but takes place in coalition outposts -->
+      <ScriptedEvent identifier="bombscare" commonness="50" faction="coalition" />
+      <ScriptedEvent identifier="terrorism101" commonness="50" faction="coalition" />
+      <!-- technically a separatist event, but takes place in coalition outposts -->
+      <ScriptedEvent identifier="separatistrelations" commonness="100" faction="coalition" />
+      <!-- technically a separatist event, but takes place in coalition outposts -->
+      <!-- events that only occur in low difficulty-->
+      <ScriptedEvent identifier="atwitsend" commonness="60" />
+    </EventSet>
+    <!-- high-difficulty random events -->
+    <EventSet identifier="outpostevent.difficult.generic.randomevents" minleveldifficulty="30" maxleveldifficulty="80" allowatstart="true" chooserandom="true" onceperoutpost="true">
+      <OverrideEventCount locationtype="City" eventcount="3" />
+      <!-- events that can occur in both low and high difficulty, commoness reduced here to favor the more difficult ones-->
+      <ScriptedEvent identifier="givingdirections" commonness="50" />
+      <ScriptedEvent identifier="goodsamaritan" commonness="50" />
+      <ScriptedEvent identifier="miketheidiot1" commonness="12" />
+      <ScriptedEvent identifier="Engineers_are_special" commonness="50" />
+      <ScriptedEvent identifier="fanclub" commonness="50" />
+      <ScriptedEvent identifier="shockjock" commonness="40" />
+      <ScriptedEvent identifier="manandhisraptor1" commonness="60" />
+      <ScriptedEvent identifier="assassinationofjacovsubra2" commonness="100" />
+      <ScriptedEvent identifier="assassinationofjacovsubra3" commonness="100" />
+      <ScriptedEvent identifier="nothingtoseehere" commonness="50" faction="coalition" />
+      <ScriptedEvent identifier="propaganda" commonness="50" faction="coalition" />
+      <!-- technically a separatist event, but takes place in coalition outposts -->
+      <ScriptedEvent identifier="bombscare" commonness="40" faction="coalition" />
+      <ScriptedEvent identifier="terrorism101" commonness="40" faction="coalition" />
+      <!-- technically a separatist event, but takes place in coalition outposts -->
+      <ScriptedEvent identifier="separatistrelations" commonness="50" faction="coalition" />
+      <!-- technically a separatist event, but takes place in coalition outposts -->
+      <!-- events that only occur in high difficulty-->
+      <ScriptedEvent identifier="blackmarket" commonness="100" />
+      <ScriptedEvent identifier="mediator" commonness="100" />
+      <ScriptedEvent identifier="firefighting" commonness="100" />
+      <ScriptedEvent identifier="sleightofhand" commonness="100" />
+      <ScriptedEvent identifier="miketheidiot2" commonness="25" />
+      <ScriptedEvent identifier="goblincooking1" commonness="50" />
+      <ScriptedEvent identifier="soundinthevent" commonness="100" />
+      <ScriptedEvent identifier="badvibrations3" commonness="50" />
+      <ScriptedEvent identifier="stuckinthemiddle" commonness="50" faction="coalition" />
+      <!-- technically a separatist event, but happens in a coalition outpost -->
+      <ScriptedEvent identifier="returner" commonness="50" />
+      <ScriptedEvent identifier="mindsunraveled" commonness="50" />
+    </EventSet>
+    <!-- Events specific to optional modules, always try these - since they don't do anything if the optional module isn't there -->
+    <EventSet identifier="outpostevents.any.optionalmodules" minleveldifficulty="0" maxleveldifficulty="80" allowatstart="true" chooserandom="false" onceperoutpost="true">
+      <EventSet identifier="engineeringstorage" minleveldifficulty="0" maxleveldifficulty="80" allowatstart="true" chooserandom="true" onceperoutpost="true">
+        <ScriptedEvent identifier="lostengineeringsupplies" commonness="60" />
+        <ScriptedEvent identifier="malfunctioningdefensebot" commonness="40" />
+      </EventSet>
+      <ScriptedEvent identifier="lostvaluables" commonness="100" />
+      <ScriptedEvent identifier="lostclownstorage" commonness="100" />
+    </EventSet>
+    <!-- Events specific to military outposts -->
+    <EventSet identifier="outpostevent.military.randomevents" minleveldifficulty="0" maxleveldifficulty="80" locationtype="military" allowatstart="true" chooserandom="true" onceperoutpost="true">
+      <!-- 50% chance of getting a military-specific event (TODO: increase if/when we have more of these available?) -->
+      <ScriptedEvent identifier="bigbrother" commonness="150" probability="0.5" faction="coalition" />
+      <ScriptedEvent identifier="tastetest" commonness="150" probability="0.5" />
+    </EventSet>
+    <!-- Events specific to research outposts -->
+    <EventSet identifier="outpostevent.research.randomevents" minleveldifficulty="0" maxleveldifficulty="80" locationtype="research" allowatstart="true" chooserandom="true" onceperoutpost="true">
+      <!-- 50% chance of getting a research-specific event (TODO: increase if/when we have more of these available?) -->
+      <ScriptedEvent identifier="crawleroutbreak" commonness="150" probability="0.5" />
+      <ScriptedEvent identifier="impromptuengineering" commonness="150" probability="0.5" />
+      <ScriptedEvent identifier="captivesouls" commonness="50" probability="0.5" />
+      <ScriptedEvent identifier="researcherescort" commonness="50" />
+      <ScriptedEvent identifier="explosivemishap" commonness="50" probability="0.5" />
+    </EventSet>
+    <EventSet identifier="outpostevents.research.triggeralways" allowatstart="true" eventcount="3">
+      <ScriptedEvent identifier="explorealienruins1" />
+      <ScriptedEvent identifier="explorealienruins2" />
+      <ScriptedEvent identifier="explorealienruins3" />
+    </EventSet>
+    <!-- Events specific to mining outposts -->
+    <EventSet identifier="outpostevent.mine.randomevents" minleveldifficulty="0" maxleveldifficulty="80" locationtype="mine" allowatstart="true" chooserandom="true" onceperoutpost="true">
+      <!-- 50% chance of getting a mine-specific event (TODO: increase if/when we have more of these available?) -->
+      <ScriptedEvent identifier="consultant" commonness="150" probability="0.5" />
+      <ScriptedEvent identifier="occupationalhazards" commonness="150" probability="0.5" />
+    </EventSet>
+    <!-- Events specific to cities -->
+    <EventSet identifier="outpostevent.city.randomevents" minleveldifficulty="0" maxleveldifficulty="80" locationtype="city" allowatstart="true" chooserandom="true" onceperoutpost="true">
+      <!-- 50% chance of getting a city-specific event (TODO: increase if/when we have more of these available?) -->
+      <ScriptedEvent identifier="captivesouls" commonness="50" probability="0.5" />
+      <ScriptedEvent identifier="explosivemishap" commonness="50" probability="0.5" />
+      <ScriptedEvent identifier="hognose" commonness="50" probability="0.5" />
+      <ScriptedEvent identifier="radiationescapee" commonness="50" />
+    </EventSet>
+    <!--Always trigger when past difficulty 25, unless completed. Introduces alien ruins.-->
+    <EventSet identifier="ruinintroduction" allowatstart="true" minleveldifficulty="25">
+      <ScriptedEvent identifier="badvibrations1" />
+    </EventSet>
+    <!-- ****************************************************************************************************************************************************** -->
+    <!-- Faction EventSets -->
+    <!-- ****************************************************************************************************************************************************** -->
+    <!-- low-difficulty repeatable clown events -->
+    <EventSet identifier="outpostevents.easy.generic.randomevents.clowns" minleveldifficulty="0" maxleveldifficulty="30" allowatstart="true" chooserandom="true" onceperoutpost="true">
+      <ScriptedEvent identifier="clownrelations1" commonness="100" faction="clowns" probability="0.5" />
+      <ScriptedEvent identifier="infiltration" commonness="70" faction="clowns" probability="0.5" />
+      <ScriptedEvent identifier="censorship" commonness="60" faction="clowns" probability="0.5" />
+    </EventSet>
+    <!-- low-difficulty repeatable husk cult events -->
+    <EventSet identifier="outpostevents.easy.generic.randomevents.huskcult" minleveldifficulty="0" maxleveldifficulty="30" allowatstart="true" chooserandom="true" onceperoutpost="true">
+      <ScriptedEvent identifier="huskcultist" commonness="100" faction="huskcult" probability="0.5" />
+    </EventSet>
+    <!-- high-difficulty repeatable clown events -->
+    <EventSet identifier="outpostevent.difficult.generic.randomevents.clowns" minleveldifficulty="30" maxleveldifficulty="80" allowatstart="true" chooserandom="true" onceperoutpost="true">
+      <ScriptedEvent identifier="clownrelations1" commonness="50" faction="clowns" probability="0.5" />
+      <ScriptedEvent identifier="clownbrutality" commonness="100" faction="clowns" probability="0.5" />
+      <ScriptedEvent identifier="clownrelations2" commonness="100" faction="clowns" probability="0.5" />
+    </EventSet>
+    <!-- high-difficulty repeatable husk cult events -->
+    <EventSet identifier="outpostevent.difficult.generic.randomevents.huskcult" minleveldifficulty="30" maxleveldifficulty="80" allowatstart="true" chooserandom="true" onceperoutpost="true">
+      <ScriptedEvent identifier="outbreak" commonness="100" faction="huskcult" probability="0.5" />
+      <ScriptedEvent identifier="huskcultist" commonness="50" faction="huskcult" probability="0.5" />
+      <ScriptedEvent identifier="huskcultambush" commonness="50" faction="huskcult" probability="0.5" />
+      <ScriptedEvent identifier="huskcultrelations" commonness="100" faction="huskcult" probability="0.5" />
+    </EventSet>
+    <!--  Faction-specific events that can only occur once. 
+        In a separate set to make these very common (when they are valid for the situation) -->
+    <EventSet identifier="outpostevents.clowns" allowatstart="true" chooserandom="true" eventcount="3" faction="clowns">
+      <ScriptedEvent identifier="clownspecialhire1" commonness="100" />
+      <ScriptedEvent identifier="pathofthebikehorn1" commonness="100" />
+      <ScriptedEvent identifier="pathofthebikehorn2" commonness="100" />
+      <ScriptedEvent identifier="pathofthebikehorn3" commonness="100" />
+      <ScriptedEvent identifier="pathofthebikehorn4" commonness="100" />
+      <ScriptedEvent identifier="pathofthebikehorn5" commonness="100" />
+    </EventSet>
+    <EventSet identifier="outpostevents.separatists" allowatstart="true" chooserandom="true" eventcount="2" faction="separatists">
+      <ScriptedEvent identifier="separatistspecialhire1" commonness="100" />
+      <ScriptedEvent identifier="separatistspecialhire2" commonness="100" />
+      <ScriptedEvent identifier="missionevent_tormsdalereport" commonness="100" />
+      <ScriptedEvent identifier="missionevent_jailbreak_sootman" commonness="10" faction="separatists" />
+    </EventSet>
+    <EventSet identifier="outpostevents.separatists.triggeralways" allowatstart="true" eventcount="1" faction="separatists">
+      <ScriptedEvent identifier="tormsdalereport_complete" commonness="100" />
+    </EventSet>
+    <EventSet identifier="outpostevents.coalition" allowatstart="true" chooserandom="true" eventcount="1" faction="coalition">
+      <ScriptedEvent identifier="coalitionspecialhire1" commonness="50" />
+      <ScriptedEvent identifier="coalitionspecialhire2" commonness="50" />
+    </EventSet>
+    <EventSet identifier="outpostevents.huskcult" allowatstart="true" chooserandom="true" eventcount="4" faction="huskcult">
+      <ScriptedEvent identifier="huskcultspecialhire1" commonness="100" />
+      <ScriptedEvent identifier="youngcultists" commonness="100" />
+      <ScriptedEvent identifier="waytoascension1" commonness="100" />
+      <ScriptedEvent identifier="waytoascension2" commonness="100" />
+      <ScriptedEvent identifier="waytoascension3" commonness="100" />
+      <ScriptedEvent identifier="waytoascension4" commonness="100" />
+      <ScriptedEvent identifier="waytoascension5" commonness="100" />
+    </EventSet>
+  </EventSet>
+</Randomevents>
